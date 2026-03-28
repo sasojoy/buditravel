@@ -1,0 +1,67 @@
+/* 家族旅遊系統 - 全域樣式 */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 全域字體 */
+body {
+  font-family: 'Inter', 'system-ui', -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 移除點擊藍色外框 */
+* {
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
+
+/* 自訂滾動條 */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: #FFF7ED; }
+::-webkit-scrollbar-thumb { background: #FDBA74; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #FB923C; }
+
+/* 頁面滑動 */
+html { scroll-behavior: smooth; }
+
+/* Focus ring */
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.15);
+}
+
+/* Router link active */
+.router-link-active {
+  color: #EA580C;
+  background-color: #FFF7ED;
+}
+
+/* 動畫 */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* 卡片 hover 效果 */
+.card-hover {
+  @apply transition-all duration-200;
+}
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(249, 115, 22, 0.12);
+}
+
+/* 漸層按鈕 */
+.btn-warm {
+  @apply bg-gradient-to-r from-orange-500 to-orange-600 text-white shadow-md;
+  background-size: 200% 200%;
+  transition: all 0.3s ease;
+}
+.btn-warm:hover {
+  background-position: right center;
+  @apply shadow-lg from-orange-600 to-orange-700;
+}
